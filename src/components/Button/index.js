@@ -2,7 +2,7 @@ import classNames from 'classnames/bind';
 import { Link } from 'react-router-dom';
 import styles from './Button.module.scss';
 const cx = classNames.bind(styles);
-function button({
+function Button({
     to,
     href,
     primary = false,
@@ -54,4 +54,4 @@ function button({
     );
 }
 
-export default button;
+export default Button;
