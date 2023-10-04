@@ -19,7 +19,7 @@ import styles from './Header.module.scss';
 
 import Button from '~/components/Button';
 import Menu from '~/components/Popper/Menu';
-import routesConfig from '~/config/routes';
+import config from '~/config';
 import Image from '~/components/Image';
 
 import { InboxIcon, MessageIcon, UploadIcon } from '~/components/Icons';
@@ -93,7 +93,7 @@ function Header() {
     return (
         <header className={cx('wrapper')}>
             <div className={cx('inner')}>
-                <Link to={routesConfig.home} className={cx('logo-link')}>
+                <Link to={config.home} className={cx('logo-link')}>
                     <img src={images.logo} alt="Tiktok" />
                 </Link>
                 <Search />
@@ -128,7 +128,7 @@ function Header() {
                             <Image
                                 className={cx('user-avatar')}
                                 alt="Nguyen Hung"
-                                src="https://p16-sign-va.tiktokcdn.com/tos-maliva-avt-0068/8bad51d109b3cef188f1ef6a2e920044~c5_720x720.jpeg?x-expires=1696082400&x-signature=PGNVHX%2F3huquNbaDSdzpidDQh3M%3D"
+                                src="https://p16-sign-va.tiktokcdn.com/tos-maliva-avt-0068/8bad51d109b3cef188f1ef6a2e920044~c5_100x100.jpeg?x-expires=1696604400&x-signature=4LN7j31hWW2o3qRwJ7XX2bn8QGM%3D"
                             />
                         ) : (
                             <button className={cx('more-button')}>
