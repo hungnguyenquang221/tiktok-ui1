@@ -32,6 +32,19 @@ function Menu({ children, items = [], hideOnClick = false, onChange = defaultFn 
             );
         });
     };
+    const handleBack = () => {
+        setHistory((prev) => prev.slice(0, prev.length - 1));
+    };
+    const renderResult = (attrs) => (
+        <div className={cx('menu-list')} tabIndex="-1" {...attrs}>
+            <PopperWrapper className={cx('menu-popper')}>
+                {history.length > 1 && <Header title={current.title} onBack={handleBack} />}
+                <div className={cx('memu-body')}>{renderItems()}</div>
+            </PopperWrapper>
+        </div>
+    );
+
+    const handleResetMenu = () => setHistory((prev) => prev.slice(0, 1));
     return (
         <Tippy
             interactive
@@ -39,23 +52,9 @@ function Menu({ children, items = [], hideOnClick = false, onChange = defaultFn 
             offset={[12, 8]}
             placement="bottom-end"
             hideOnClick={hideOnClick}
-            render={(attrs) => (
-                <div className={cx('menu-list')} tabIndex="-1" {...attrs}>
-                    <PopperWrapper className={cx('menu-popper')}>
-                        {history.length > 1 && (
-                            <Header
-                                title={current.title}
-                                onBack={() => {
-                                    setHistory((prev) => prev.slice(0, prev.length - 1));
-                                }}
-                            />
-                        )}
-                        <div className={cx('memu-body')}>{renderItems()}</div>
-                    </PopperWrapper>
-                </div>
-            )}
+            render={renderResult}
             //khi vào một menu con và khi di ra sẽ trở về phần tử đầu tiên
-            onHide={() => setHistory((prev) => prev.slice(0, 1))}
+            onHide={handleResetMenu}
         >
             {children}
         </Tippy>
