@@ -128,7 +128,7 @@ function Header() {
                             <Image
                                 className={cx('user-avatar')}
                                 alt="Nguyen Hung"
-                                src="https://p16-sign-va.tiktokcdn.com/tos-maliva-avt-0068/8bad51d109b3cef188f1ef6a2e920044~c5_100x100.jpeg?x-expires=1696604400&x-signature=4LN7j31hWW2o3qRwJ7XX2bn8QGM%3D"
+                                src="https://p16-sign-va.tiktokcdn.com/tos-maliva-avt-0068/8bad51d109b3cef188f1ef6a2e920044~c5_100x100.jpeg?x-expires=1697558400&x-signature=ycRBHA5RibCFhrzL0G%2FKkllz0xk%3D"
                             />
                         ) : (
                             <button className={cx('more-button')}>
